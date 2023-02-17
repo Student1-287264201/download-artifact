@@ -14,3 +14,9 @@ outputs:
 runs:
   using: 'node16'
   main: 'dist/index.js'
+- name: Upload artifact for deployment job
+  uses: actions/upload-artifact@v2.3.1
+  with:
+    name: webapp
+    path: website/**
+    if-no-files-found: warn
